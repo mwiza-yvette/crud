@@ -12,6 +12,8 @@
                 <th>firstname</th>
                 <th>lastname</th>
                 <th>age</th>
+                <th>Update</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -27,10 +29,12 @@
                     ?>
                   
              <tr>
-                <td><?php echo$row['id'];?></td>
-                <td><?php echo$row['firstname'];?></td>
-                <td><?php echo$row['lastname'];?></td>
-                <td><?php echo$row['age'];?></td>
+                <td><?php echo $row['id'];?></td>
+                <td><?php echo $row['firstname'];?></td>
+                <td><?php echo $row['lastname'];?></td>
+                <td><?php echo $row['age'];?></td>
+                <td><a href="update.php?id=<?php echo $row['id'];?>" class="btn btn-success ">Update</a></td>
+                <td><a href="delete.php?id=<?php echo $row['id'];?>" class="btn btn-danger ">Delete</a></td>
             </tr>
                     <?php
                 }
@@ -50,6 +54,11 @@
       echo "<h6>".$_GET['insert_sms']."</h6>";
     }
     ?>
+    <!-- <?php
+    if(isset($_GET['delete_msg'])){
+      echo "<h6>".$_GET['delete_msg']."</h6>";
+    }
+    ?> -->
     <!-- insert_smsorm action="insert_data.php" method="post" > -->
      <!-- Modal -->
       <form action="insert_data.php" method="post">
@@ -64,15 +73,15 @@
 
         <div class="form-group">
           <label for="">FirstName</label>
-          <input type="text" name="f_name" class="form-control">
+          <input type="text" name="f_name" class="form-control" values="<?php echo $row ['firstname']?>">
         </div>
         <div class="form-group">
           <label for="">Last Name</label>
-          <input type="text" name="l_name" class="form-control">
+          <input type="text" name="l_name" class="form-control" values="<?php echo $row ['lastname']?>">
         </div>
         <div class="form-group">
           <label for="">Age</label>
-          <input type="text" name="age" class="form-control">
+          <input type="text" name="age" class="form-control" values="<?php echo $row ['age']?>">
         </div>
        
       </div>

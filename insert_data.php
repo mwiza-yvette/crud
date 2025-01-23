@@ -24,7 +24,7 @@ else{
         die("query failed".mysqli_error());
     }
     else{
-        header('location:indeex.php?insert_sms=your data have been inserted successfuly');
+        header('location:indeex.php?insert_msg=your data have been inserted successfuly');
     }
 }
 }
